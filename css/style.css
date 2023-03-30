@@ -1,3 +1,7 @@
+:root {
+  --brand-grd: linear-gradient(316.53deg, #26fff2 13.2%, #326cff 71.54%);
+}
+
 body {
   background-color: #000;
   color: white;
@@ -17,20 +21,35 @@ a {
   text-decoration: none;
   list-style: none;
 }
-
-.conteiner {
+/* ==================== Components ==================*/
+.container {
   width: 1466px;
   padding: 0 15px 0 15px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
 }
 
+.buttons {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  padding: 15px 30px;
+  background: linear-gradient(316.53deg, #26fff2 13.2%, #326cff 71.54%);
+  border-radius: 100px;
+  color: #ffffff;
+  cursor: pointer;
+}
+/* ============= Header ============== */
 .header {
   padding-top: 15px;
   padding-bottom: 15px;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
 .header-nav {
   display: flex;
   align-items: center;
@@ -46,26 +65,19 @@ a {
   line-height: 0px;
 }
 
+/* потрібно скруглити градієнт на лого або зробити по іншому
+також додати такий самий градієнт на та текст 18+ та кнопку в хіро */
 .header-logo-m {
   font-family: "Lemon";
   font-size: 40px;
   margin-right: 14px;
   line-height: 0px;
-  /* border-radius: 14px; */
   border: 4px solid;
-  border-image-source: linear-gradient(132.88deg, #326cff 3.44%, #26fff2 100%);
+  border-radius: 14px;
+  padding: 5px 11px;
+  border-image-source: var(--brand-grd);
   border-image-slice: 1;
 }
-
-/* .header-logo-m::before {
-  position: absolute;
-  width: 70px;
-  height: 70px;
-  border-radius: 14px;
-  border: 4px solid;
-  border-image-source: linear-gradient(132.88deg, #326cff 3.44%, #26fff2 100%);
-  border-image-slice: 1;
-} */
 
 .header-list {
   display: flex;
@@ -97,3 +109,101 @@ a {
 .header-list-icon-item:not(:last-child) {
   margin-right: 75px;
 }
+/* ======================Hero=================================== */
+
+.hero-section {
+  border-bottom: 2px solid #2f2e2e;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.hero-container {
+  display: flex;
+}
+.hero-section .container {
+  width: 1516px;
+}
+.hero-container-text {
+  width: 532px;
+  margin-top: 120px;
+  margin-right: 28px;
+  background: #010101;
+  box-shadow: 100px 0px 100px #000000;
+}
+
+.hero-title {
+  font-family: "Marcellus";
+  font-size: 80px;
+  line-height: calc(70 / 80);
+  margin-bottom: 32px;
+}
+
+.hero-title-list {
+  display: flex;
+  margin-bottom: 32px;
+  align-items: center;
+}
+.hero-title-text {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: calc(10 / 16);
+}
+.hero-title-text:nth-child(-n + 2) {
+  margin-right: 18px;
+}
+.hero-title-text:nth-child(3) {
+  margin-right: 42px;
+}
+.hero-title-text:nth-child(2) {
+  padding: 6px 15px;
+  border: 1.5px solid;
+  border-image-source: var(--brand-grd);
+  border-radius: 50px;
+  border-image-slice: 1;
+}
+
+.text-rating {
+  display: inline-flex;
+  align-items: center;
+}
+.text-rating::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  margin-left: 12px;
+  background-image: url(../images/icons/icon-star.svg);
+}
+.hero-title-paragraph {
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  color: #c2c2c2;
+  margin-bottom: 32px;
+}
+.hero-title-btn {
+  display: flex;
+}
+
+.hero-btn-list:first-child {
+  margin-right: 35px;
+}
+
+.hero-btn-first {
+  display: inline-flex;
+  align-items: center;
+  border: transparent;
+  box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
+}
+
+.hero-btn-first::before {
+  content: "";
+  width: 14px;
+  height: 18px;
+  margin-right: 15px;
+  background-image: url(../images/icons/icon-play.svg);
+}
+.hero-btn-second {
+  color: #323232;
+  background: #ffffff;
+  filter: drop-shadow(17px 17px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* =============== section-tv-shows ===========*/
