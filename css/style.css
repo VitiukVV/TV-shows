@@ -1,5 +1,10 @@
 :root {
-  --brand-grd: linear-gradient(316.53deg, #26fff2 13.2%, #326cff 71.54%);
+  --main-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --brand-grd: linear-gradient(
+    316.53deg,
+    #26fff2 13.2%,
+    #326cff 71.54%
+  );
 }
 
 body {
@@ -35,10 +40,20 @@ a {
   font-size: 16px;
   line-height: calc(20 / 16);
   padding: 15px 30px;
-  background: linear-gradient(316.53deg, #26fff2 13.2%, #326cff 71.54%);
+  background: linear-gradient(
+    316.53deg,
+    #26fff2 13.2%,
+    #326cff 71.54%
+  );
   border-radius: 100px;
+  border: transparent;
   color: #ffffff;
   cursor: pointer;
+  transition: box-shadow var(--main-transition);
+}
+
+.buttons:is(:hover, :focus) {
+  box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
 }
 
 .title {
@@ -53,9 +68,18 @@ a {
   content: "";
   width: 35px;
   height: 8px;
-  background: linear-gradient(316.53deg, #26fff2 13.2%, #326cff 71.54%);
+  background: linear-gradient(
+    316.53deg,
+    #26fff2 13.2%,
+    #326cff 71.54%
+  );
   border-radius: 50px;
   transform: rotate(-90deg);
+}
+
+.thumb {
+  border-radius: 20px;
+  overflow: hidden;
 }
 /* ============= Header ============== */
 .header {
@@ -112,6 +136,7 @@ a {
   opacity: 0.5;
   padding-top: 25px;
   padding-bottom: 25px;
+  transition: opacity var(--main-transition);
 }
 
 .header-list-link:is(:hover, :focus) {
@@ -119,17 +144,25 @@ a {
 }
 
 .current-page {
+  position: relative;
   opacity: 1;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 5px; */
 }
 .current-page::after {
+  position: absolute;
+  left: 0;
+  bottom: 16px;
   content: "";
-  width: 46px;
+  width: 100%;
   height: 2px;
-  background: linear-gradient(316.53deg, #26fff2 13.2%, #326cff 71.54%);
-  display: block;
+  background: linear-gradient(
+    316.53deg,
+    #26fff2 13.2%,
+    #326cff 71.54%
+  );
+  /* display: block; */
   border-radius: 50px;
 }
 .header-list-icon {
@@ -151,7 +184,9 @@ a {
   display: flex;
 }
 .hero-section .container {
+  position: relative;
   width: 1516px;
+  height: 765px;
 }
 .hero-container-text {
   width: 532px;
@@ -220,9 +255,8 @@ a {
 .hero-btn-first {
   display: inline-flex;
   align-items: center;
-  border: transparent;
+
   gap: 15px;
-  box-shadow: 0px 4px 50px rgba(50, 108, 255, 0.5);
 }
 
 .hero-btn-first::before {
@@ -238,6 +272,11 @@ a {
   filter: drop-shadow(17px 17px 20px rgba(0, 0, 0, 0.3));
 }
 
+.hero-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 /* =============== section-tv-shows ===========*/
 .section-tv-shows {
   margin-top: 60px;
@@ -253,6 +292,36 @@ a {
 }
 
 .tv-shows-item {
-  background: #c4c4c4;
-  border-radius: 20px;
+  /* background: #c4c4c4;
+  border-radius: 20px; */
+  transition: filter var(--main-transition);
+}
+.tv-shows-item:hover {
+  filter: drop-shadow(0px 0px 20px rgba(44, 176, 249, 0.5));
+  /* box-shadow: 0px 4px 50px 50px #26fff2; */
+}
+
+/* ================= section-trending-movies====================*/
+.section-trending-movies {
+  margin-top: 60px;
+}
+
+.section-trending-movies .container {
+  width: 1441px;
+}
+
+.trending-movies-list {
+  display: flex;
+  gap: 41px;
+}
+.trending-movies-item {
+  transition: filter var(--main-transition);
+}
+.trending-movies-item:hover {
+  filter: drop-shadow(0px 0px 20px rgba(44, 176, 249, 0.5));
+}
+.trending-movies-btn {
+  margin-top: 55px;
+  padding-left: 34px;
+  padding-right: 34px;
 }
