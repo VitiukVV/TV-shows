@@ -113,11 +113,11 @@ a {
   font-size: 40px;
   margin-right: 14px;
   line-height: 0px;
-  border: 4px solid;
+  border: 4px solid transparent;
   border-radius: 14px;
   padding: 5px 11px;
-  border-image-source: var(--brand-grd);
-  border-image-slice: 1;
+  background: linear-gradient(black, black) padding-box,
+      var(--brand-grd) border-box;
 }
 
 .header-list {
@@ -221,10 +221,11 @@ a {
 }
 .hero-title-text:nth-child(2) {
   padding: 6px 15px;
-  border: 1.5px solid;
-  border-image-source: var(--brand-grd);
+  border: 1.5px solid transparent;
   border-radius: 50px;
-  border-image-slice: 1;
+  background: linear-gradient(black, black) padding-box,
+      var(--brand-grd) border-box;
+
 }
 
 .text-rating {
@@ -324,4 +325,79 @@ a {
   margin-top: 55px;
   padding-left: 34px;
   padding-right: 34px;
+}
+
+/* POPULAR-GENRES */
+
+.popular-genres-container {
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+.popular-genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.popular-genres-item {
+  width: 340px;
+  height: 198px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popular-genres-item:nth-child(1) {
+  background: linear-gradient(109.31deg, #FD093F 2.4%, #F383F1 100%);
+}
+
+.popular-genres-item:nth-child(2) {
+  background: linear-gradient(114.5deg, #0FFFDA 2.22%, #3CDB77 68.84%);
+}
+
+.popular-genres-item:nth-child(3) {
+  background: linear-gradient(109.31deg, #B936FF 2.4%, #57DEDA 100%);
+}
+
+.popular-genres-item:nth-child(4) {
+  background: linear-gradient(109.31deg, #FD093F 2.4%, #FB1378 2.41%, #FCCB1A 100%);
+}
+
+.popular-genres-item:nth-child(5) {
+  background: linear-gradient(109.31deg, #FF6472 2.4%, #FDA75D 100%);
+}
+
+.popular-genres-item:nth-child(6) {
+    background: linear-gradient(110.16deg, #13547A 2.37%, #80D0C7 96.77%);
+}
+
+.popular-genres-item:nth-child(7) {
+  background: linear-gradient(109.93deg, #FFF77B 2.37%, #FFBF42 50%);
+}
+
+.popular-genres-item:nth-child(8) {
+  background: linear-gradient(109.31deg, #1FA2FF 2.4%, #1FA2FF 2.41%, #1F535C 97.46%);
+}
+
+.popular-genres-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.popular-genres-icon {
+fill: #ffffff;
+}
+
+.popular-genres-text {
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: calc(20 / 28);
+  text-align: center;
+
+  color: #FFFFFF;
 }
